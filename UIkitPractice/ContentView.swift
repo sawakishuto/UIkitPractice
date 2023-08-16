@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text(text).foregroundColor(.black)
-             CustomButton(text: $text)
+CustomButton(text: $text)
         }
         .padding()
         .background(Color(.white))

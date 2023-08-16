@@ -6,15 +6,17 @@
 //
 import UIKit
 import SwiftUI
-struct CustomButton: UIViewRepresentable{
+struct CustomButton: UIViewRepresentable {
     @Binding var text: String
+    
   
     
     func makeUIView(context:Context) -> UIButton{
         let button = UIButton(frame: CGRect(x: 0,y :0,width: 160,height: 44))
+        
         button.setTitle("CustomButton", for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.addTarget(context, action: #selector(Coordinator.didTapCustomButton(sender:)), for: .touchUpInside)
+        button.addTarget(context.coordinator, action: #selector(Coordinator.didTapCustomButton(sender:)), for: .touchUpInside)
         return button
     }
     func updateUIView(_ uiView: UIButton, context: Context) {
@@ -25,6 +27,7 @@ struct CustomButton: UIViewRepresentable{
     }
     class Coordinator{
         var button: CustomButton
+        
         init(button: CustomButton){
             self.button = button
         }
